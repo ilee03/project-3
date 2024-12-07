@@ -1,0 +1,334 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #e0e0f6;
+  cursor: url(/project-3/images/shovel2.png), pointer;
+  transition: background-color 0.5s ease; /* Smooth transition for body background color */
+}
+@font-face {
+  font-family: 'BIZUDP';
+  src: url(./fonts/BIZUDP-Regular.ttf);
+}
+
+.scroll-container {
+  /* display: flex; */
+  overflow-x: auto;
+  height: 100vh;
+}
+
+.content {
+  display: inline-flex;
+  width: calc(100vw * 6); /* Dynamically calculate width based on the number of sections */
+}
+
+.section {
+  display: flex; 
+  align-items: center; 
+  /* flex-wrap: wrap; */
+  min-width: 100vw;
+  height: 100vh;
+  background-color: #e0e0f6;
+  background-image: 
+    url('./images/grass.png'), /* First background (bottom layer) */
+    url('./images/grass2.png'); /* Second background (top layer) */
+  background-repeat: repeat-x, repeat-x; 
+  background-position: bottom 0px center, bottom center; 
+  position: relative;
+  transition: 0.5s ease;
+}
+
+
+
+/* Flower images positioned inside each section */
+.section .flower-image {
+  position: sticky;
+  max-width: 440px; /* Set a maximum width for larger screens */
+  height: auto; /* Maintain aspect ratio */
+  /* z-index: 2; Ensure the flower image is above the background */
+}
+
+h1 {
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  margin: 0;
+  padding: 20px 20px 5px 20px;
+  font-family: 'BIZUDP', Arial, sans-serif;
+  font-weight: 400;
+  font-size: 9rem;
+  color: #391a1b;
+  transition: color 0.5s ease; /* Smooth transition for title color */
+}
+
+h2 {
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  margin: 0;
+  padding: 0px 20px 20px 20px;
+  font-family: 'BIZUDP', Arial, sans-serif;
+  font-weight: 400;
+  font-size: 4rem;
+  color: #391a1b;
+  transition: color 0.5s ease; /* Smooth transition for title color */
+}
+
+h3 {
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  margin: 0;
+  padding: 0px 20px 20px 20px;
+  font-family: 'BIZUDP', Arial, sans-serif;
+  font-weight: 400;
+  font-size: 1.7rem;
+  color: #391a1b;
+  transition: color 0.5s ease; /* Smooth transition for title color */
+}
+
+.vertical-section {
+  /* display: flex; */
+  flex-direction: column; /* Stack content vertically */
+  align-items: center; /* Center content horizontally */
+  justify-content: center; /* Center all content vertically */
+  text-align: center;
+  padding: 40px 20px; 
+  background-color: #adc160; /* Section background */
+}
+
+.squiggly-divider {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.squiggly-divider svg {
+  width: 70vh;
+  height: auto; 
+}
+
+.text-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 800px;
+  margin: 0 auto; 
+}
+
+.text-box p {
+  font-family: 'BIZUDP', Arial, sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.6; 
+  color: #333;
+}
+
+.inner {
+  cursor: url(/project-3/images/gloves2.png), pointer;
+}
+
+
+/* Tooltip container styling */
+.tooltip {
+  position: relative; /* Positioning for the tooltip */
+  display: inline-block; /* Keep it inline with the image */
+}
+
+/* Tooltip text styling */
+.tooltip .tooltiptext {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.75); /* Dark background */
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  opacity: 0; /* Initially hidden */
+  visibility: hidden; /* Hidden from the flow */
+  transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition */
+  z-index: 10; /* Ensure it appears above the image */
+}
+
+/* Tooltip visibility on hover */
+.tooltip-image:hover + .tooltip .tooltiptext {
+  opacity: 1; /* Make tooltip visible */
+  visibility: visible; /* Make tooltip appear */
+}
+
+/* Ensure image stays in place */
+.tooltip-image {
+  width: 25%; /* Adjust image size */
+  position: absolute;
+  top: -50%;
+  right: 4%;
+}
+
+/* Plant pages here  */
+.plant-page {
+  background-color: #fffff7;
+  font-family: 'BIZUDP';
+
+}
+
+header {
+  background-color: #e0e0f6;
+  width: 100%;
+  position: relative;
+  height: 100px;
+}
+
+header img {
+  width: 25%;
+  position: absolute;
+  top: -50%;
+  right: 4%;
+}
+
+
+main {
+  padding: 7%;
+}
+
+main h1 {
+  font-size: 6rem;
+}
+
+main h3 {
+  margin: 1% 0;
+  letter-spacing: 6px;
+  font-size: 2rem;
+}
+
+main img {
+  background-color: #e0e0f6;
+  width: 100%;
+  padding: 8% 0%;
+  border-radius: 40px;
+  grid-row: span 4;
+}
+
+main p, .instructions {
+  background-color: #e0e0f6;
+  padding: 2%;
+  border-radius: 20px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-gap: 4em;
+}
+
+.instructions {
+  grid-row: span 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  grid-row: span 2;
+
+}
+
+.instructions h2 {
+  font-size: 2rem;
+  align-self: flex-start;
+  margin-left: 2%;
+}
+
+.instructions ul {
+  width: 85%;
+}
+
+
+.instructions li {
+  margin-bottom: 2%;
+}
+
+#customers {
+  border-collapse: collapse;
+  width: 100%;
+  font-family: 'BIZUDP';
+  margin: 5vw;
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+  margin-left: 25%;
+  background-color: white;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+.flexbox-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;         
+  background-color: #e0e0f6;      
+  padding: 15vw 10vw 15vw 10vw;           
+  margin: 100px;              
+  border: 1px solid #ddd;    
+  border-radius: 5%;
+  font-family: 'BIZUDP';
+  font-size: 4rem;
+}
+
+.flex-wrapper {
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  height: 100%; 
+  width: 100%; 
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto ;
+  gap: 0;
+  padding: 100px;
+  background-color: #adc160;
+}
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid black;
+  text-align: center;
+  display: flex;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+  padding: 20px;
+  margin: -1px;
+}
+
+.grid-container:nth-child(1) { grid-column: 1/2;}
+.grid-container:nth-child(2) { grid-column: 2/3;}
+.grid-container:nth-child(3) { grid-column: 3/4;}
+.grid-container:nth-child(4) { grid-column: 7/9;}
+
+
+@media (max-width: 480px) {
+  .grid-container { flex-direction: column; }
+}
+
+/* Keyframes for the shake effect */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+/* Shake class for flower images */
+.flower-image.shake {
+  animation: shake 0.5s ease-in-out; /* Adjust duration as needed */
+}
